@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Git Shortcuts Doctor">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <circle cx="36" cy="33" r="10" fill="#f8fafc"/>
+  <circle cx="36" cy="95" r="10" fill="#f8fafc"/>
+  <circle cx="92" cy="64" r="10" fill="#38bdf8"/>
+  <path d="M36 33v62M36 33l56 31M36 95l56-31" fill="none" stroke="#f8fafc" stroke-linecap="round" stroke-width="8"/>
+  <path d="M78 26h20a8 8 0 0 1 8 8v13" fill="none" stroke="#22c55e" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"/>
+  <path d="M100 42l6 5 6-5" fill="none" stroke="#22c55e" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"/>
+</svg>

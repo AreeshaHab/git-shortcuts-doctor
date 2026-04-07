@@ -1,0 +1,472 @@
+{
+  "name": "git-shortcuts-doctor",
+  "displayName": "Git Shortcuts Doctor",
+  "description": "A VS Code Git workflow assistant with shortcuts, conflict recovery, PR readiness checks, and PR creation for GitHub and GitLab.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "keywords": [
+    "git",
+    "pull-request",
+    "merge-conflict",
+    "github",
+    "gitlab",
+    "workflow",
+    "source-control"
+  ],
+  "galleryBanner": {
+    "color": "#0f172a",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Source Control",
+    "Other"
+  ],
+  "main": "./src/extension.js",
+  "markdown": "github",
+  "activationEvents": [
+    "onCommand:gitShortcutsDoctor.openDashboard",
+    "onCommand:gitShortcutsDoctor.startFeature",
+    "onCommand:gitShortcutsDoctor.startPrBranch",
+    "onCommand:gitShortcutsDoctor.syncWithTargetBranch",
+    "onCommand:gitShortcutsDoctor.checkPrReadiness",
+    "onCommand:gitShortcutsDoctor.preparePr",
+    "onCommand:gitShortcutsDoctor.createPr",
+    "onCommand:gitShortcutsDoctor.syncBranch",
+    "onCommand:gitShortcutsDoctor.saveWorkQuickly",
+    "onCommand:gitShortcutsDoctor.undoLastMistake",
+    "onCommand:gitShortcutsDoctor.conflictCenter",
+    "onCommand:gitShortcutsDoctor.gitStatus",
+    "onCommand:gitShortcutsDoctor.fetchAll",
+    "onCommand:gitShortcutsDoctor.pullLatest",
+    "onCommand:gitShortcutsDoctor.pullRebase",
+    "onCommand:gitShortcutsDoctor.addAll",
+    "onCommand:gitShortcutsDoctor.addCurrentFile",
+    "onCommand:gitShortcutsDoctor.commit",
+    "onCommand:gitShortcutsDoctor.commitAmend",
+    "onCommand:gitShortcutsDoctor.push",
+    "onCommand:gitShortcutsDoctor.pushForceLease",
+    "onCommand:gitShortcutsDoctor.createBranch",
+    "onCommand:gitShortcutsDoctor.checkoutBranch",
+    "onCommand:gitShortcutsDoctor.mergeBranch",
+    "onCommand:gitShortcutsDoctor.stashPush",
+    "onCommand:gitShortcutsDoctor.stashPop",
+    "onCommand:gitShortcutsDoctor.abortMerge",
+    "onCommand:gitShortcutsDoctor.abortRebase",
+    "onCommand:gitShortcutsDoctor.runCustomGit",
+    "onCommand:gitShortcutsDoctor.acceptCurrent",
+    "onCommand:gitShortcutsDoctor.acceptIncoming",
+    "onCommand:gitShortcutsDoctor.acceptBoth",
+    "onCommand:gitShortcutsDoctor.nextConflict",
+    "onCommand:gitShortcutsDoctor.previousConflict",
+    "onCommand:gitShortcutsDoctor.gitDoctor"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "gitShortcutsDoctor.openDashboard",
+        "title": "Git Shortcuts Doctor: Open Dashboard",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.startFeature",
+        "title": "Git Shortcuts Doctor: Start Feature",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.startPrBranch",
+        "title": "Git Shortcuts Doctor: Start PR Branch",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.syncWithTargetBranch",
+        "title": "Git Shortcuts Doctor: Sync With Target Branch",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.checkPrReadiness",
+        "title": "Git Shortcuts Doctor: Check PR Readiness",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.preparePr",
+        "title": "Git Shortcuts Doctor: Prepare PR",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.createPr",
+        "title": "Git Shortcuts Doctor: Create PR",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.syncBranch",
+        "title": "Git Shortcuts Doctor: Sync Branch",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.saveWorkQuickly",
+        "title": "Git Shortcuts Doctor: Save Work Quickly",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.undoLastMistake",
+        "title": "Git Shortcuts Doctor: Undo Last Mistake",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.conflictCenter",
+        "title": "Git Shortcuts Doctor: Conflict Center",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.gitStatus",
+        "title": "Git Shortcuts Doctor: Git Status",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.fetchAll",
+        "title": "Git Shortcuts Doctor: Fetch All",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.pullLatest",
+        "title": "Git Shortcuts Doctor: Pull Latest",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.pullRebase",
+        "title": "Git Shortcuts Doctor: Pull Rebase",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.addAll",
+        "title": "Git Shortcuts Doctor: Add All",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.addCurrentFile",
+        "title": "Git Shortcuts Doctor: Add Current File",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.commit",
+        "title": "Git Shortcuts Doctor: Commit",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.commitAmend",
+        "title": "Git Shortcuts Doctor: Commit Amend",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.push",
+        "title": "Git Shortcuts Doctor: Push",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.pushForceLease",
+        "title": "Git Shortcuts Doctor: Push Force With Lease",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.createBranch",
+        "title": "Git Shortcuts Doctor: Create Branch",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.checkoutBranch",
+        "title": "Git Shortcuts Doctor: Checkout Branch",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.mergeBranch",
+        "title": "Git Shortcuts Doctor: Merge Branch",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.stashPush",
+        "title": "Git Shortcuts Doctor: Stash Push",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.stashPop",
+        "title": "Git Shortcuts Doctor: Stash Pop",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.abortMerge",
+        "title": "Git Shortcuts Doctor: Abort Merge",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.abortRebase",
+        "title": "Git Shortcuts Doctor: Abort Rebase",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.acceptCurrent",
+        "title": "Git Shortcuts Doctor: Accept Current Change",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.acceptIncoming",
+        "title": "Git Shortcuts Doctor: Accept Incoming Change",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.acceptBoth",
+        "title": "Git Shortcuts Doctor: Accept Both Changes",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.nextConflict",
+        "title": "Git Shortcuts Doctor: Next Conflict",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.previousConflict",
+        "title": "Git Shortcuts Doctor: Previous Conflict",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.gitDoctor",
+        "title": "Git Shortcuts Doctor: Diagnose Git State",
+        "category": "Git Shortcuts Doctor"
+      },
+      {
+        "command": "gitShortcutsDoctor.runCustomGit",
+        "title": "Git Shortcuts Doctor: Run Custom Git Command",
+        "category": "Git Shortcuts Doctor"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "gitShortcutsDoctor.openDashboard",
+        "key": "ctrl+alt+g d",
+        "mac": "cmd+alt+g d"
+      },
+      {
+        "command": "gitShortcutsDoctor.startFeature",
+        "key": "ctrl+alt+g w",
+        "mac": "cmd+alt+g w"
+      },
+      {
+        "command": "gitShortcutsDoctor.startPrBranch",
+        "key": "ctrl+alt+g j",
+        "mac": "cmd+alt+g j"
+      },
+      {
+        "command": "gitShortcutsDoctor.syncWithTargetBranch",
+        "key": "ctrl+alt+g i",
+        "mac": "cmd+alt+g i"
+      },
+      {
+        "command": "gitShortcutsDoctor.checkPrReadiness",
+        "key": "ctrl+alt+g v",
+        "mac": "cmd+alt+g v"
+      },
+      {
+        "command": "gitShortcutsDoctor.preparePr",
+        "key": "ctrl+alt+g shift+v",
+        "mac": "cmd+alt+g shift+v"
+      },
+      {
+        "command": "gitShortcutsDoctor.createPr",
+        "key": "ctrl+alt+g shift+j",
+        "mac": "cmd+alt+g shift+j"
+      },
+      {
+        "command": "gitShortcutsDoctor.syncBranch",
+        "key": "ctrl+alt+g y",
+        "mac": "cmd+alt+g y"
+      },
+      {
+        "command": "gitShortcutsDoctor.saveWorkQuickly",
+        "key": "ctrl+alt+g k",
+        "mac": "cmd+alt+g k"
+      },
+      {
+        "command": "gitShortcutsDoctor.undoLastMistake",
+        "key": "ctrl+alt+g z",
+        "mac": "cmd+alt+g z"
+      },
+      {
+        "command": "gitShortcutsDoctor.conflictCenter",
+        "key": "ctrl+alt+g q",
+        "mac": "cmd+alt+g q"
+      },
+      {
+        "command": "gitShortcutsDoctor.gitStatus",
+        "key": "ctrl+alt+g s",
+        "mac": "cmd+alt+g s"
+      },
+      {
+        "command": "gitShortcutsDoctor.fetchAll",
+        "key": "ctrl+alt+g f",
+        "mac": "cmd+alt+g f"
+      },
+      {
+        "command": "gitShortcutsDoctor.pullLatest",
+        "key": "ctrl+alt+g u",
+        "mac": "cmd+alt+g u"
+      },
+      {
+        "command": "gitShortcutsDoctor.pullRebase",
+        "key": "ctrl+alt+g l",
+        "mac": "cmd+alt+g l"
+      },
+      {
+        "command": "gitShortcutsDoctor.addAll",
+        "key": "ctrl+alt+g a",
+        "mac": "cmd+alt+g a"
+      },
+      {
+        "command": "gitShortcutsDoctor.addCurrentFile",
+        "key": "ctrl+alt+g .",
+        "mac": "cmd+alt+g ."
+      },
+      {
+        "command": "gitShortcutsDoctor.commit",
+        "key": "ctrl+alt+g c",
+        "mac": "cmd+alt+g c"
+      },
+      {
+        "command": "gitShortcutsDoctor.commitAmend",
+        "key": "ctrl+alt+g shift+c",
+        "mac": "cmd+alt+g shift+c"
+      },
+      {
+        "command": "gitShortcutsDoctor.push",
+        "key": "ctrl+alt+g p",
+        "mac": "cmd+alt+g p"
+      },
+      {
+        "command": "gitShortcutsDoctor.pushForceLease",
+        "key": "ctrl+alt+g shift+p",
+        "mac": "cmd+alt+g shift+p"
+      },
+      {
+        "command": "gitShortcutsDoctor.createBranch",
+        "key": "ctrl+alt+g n",
+        "mac": "cmd+alt+g n"
+      },
+      {
+        "command": "gitShortcutsDoctor.checkoutBranch",
+        "key": "ctrl+alt+g b",
+        "mac": "cmd+alt+g b"
+      },
+      {
+        "command": "gitShortcutsDoctor.mergeBranch",
+        "key": "ctrl+alt+g e",
+        "mac": "cmd+alt+g e"
+      },
+      {
+        "command": "gitShortcutsDoctor.stashPush",
+        "key": "ctrl+alt+g t",
+        "mac": "cmd+alt+g t"
+      },
+      {
+        "command": "gitShortcutsDoctor.stashPop",
+        "key": "ctrl+alt+g o",
+        "mac": "cmd+alt+g o"
+      },
+      {
+        "command": "gitShortcutsDoctor.abortMerge",
+        "key": "ctrl+alt+g m",
+        "mac": "cmd+alt+g m"
+      },
+      {
+        "command": "gitShortcutsDoctor.abortRebase",
+        "key": "ctrl+alt+g r",
+        "mac": "cmd+alt+g r"
+      },
+      {
+        "command": "gitShortcutsDoctor.acceptCurrent",
+        "key": "ctrl+alt+g 1",
+        "mac": "cmd+alt+g 1",
+        "when": "isMergeEditor || mergeConflictsEnabled"
+      },
+      {
+        "command": "gitShortcutsDoctor.acceptIncoming",
+        "key": "ctrl+alt+g 2",
+        "mac": "cmd+alt+g 2",
+        "when": "isMergeEditor || mergeConflictsEnabled"
+      },
+      {
+        "command": "gitShortcutsDoctor.acceptBoth",
+        "key": "ctrl+alt+g 3",
+        "mac": "cmd+alt+g 3",
+        "when": "isMergeEditor || mergeConflictsEnabled"
+      },
+      {
+        "command": "gitShortcutsDoctor.nextConflict",
+        "key": "ctrl+alt+g ]",
+        "mac": "cmd+alt+g ]"
+      },
+      {
+        "command": "gitShortcutsDoctor.previousConflict",
+        "key": "ctrl+alt+g [",
+        "mac": "cmd+alt+g ["
+      },
+      {
+        "command": "gitShortcutsDoctor.gitDoctor",
+        "key": "ctrl+alt+g h",
+        "mac": "cmd+alt+g h"
+      },
+      {
+        "command": "gitShortcutsDoctor.runCustomGit",
+        "key": "ctrl+alt+g x",
+        "mac": "cmd+alt+g x"
+      }
+    ],
+    "configuration": {
+      "title": "Git Shortcuts Doctor",
+      "properties": {
+        "gitShortcutsDoctor.defaultTargetBranch": {
+          "type": "string",
+          "default": "main",
+          "description": "Default target branch used in PR workflows such as start PR branch, sync with target branch, and PR readiness."
+        },
+        "gitShortcutsDoctor.preferredPrMode": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "cli",
+            "browser"
+          ],
+          "default": "auto",
+          "description": "Preferred PR creation mode. Auto uses gh/glab when available and falls back to browser."
+        },
+        "gitShortcutsDoctor.prTitleTemplate": {
+          "type": "string",
+          "default": "{firstCommit}",
+          "description": "Template for suggested PR titles. Supported placeholders: {branch}, {target}, {firstCommit}, {commitCount}."
+        },
+        "gitShortcutsDoctor.prBodyTemplate": {
+          "type": "string",
+          "default": "Target branch: {target}\\n\\nSummary\\n- Update this section before submitting the PR.\\n\\nIncluded commits\\n{commitBullets}\\n\\nWorking tree clean: {workingTreeClean}",
+          "description": "Template for suggested PR bodies. Supported placeholders: {branch}, {target}, {firstCommit}, {commitCount}, {commitBullets}, {workingTreeClean}."
+        }
+      }
+    },
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "gitShortcutsDoctor.openDashboard"
+        },
+        {
+          "command": "gitShortcutsDoctor.gitDoctor"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "node -e \"require('./src/extension.js')\"",
+    "check": "node --check src/extension.js"
+  },
+  "devDependencies": {}
+}
