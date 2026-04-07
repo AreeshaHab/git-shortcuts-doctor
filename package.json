@@ -4,6 +4,14 @@
   "description": "A VS Code Git workflow assistant with shortcuts, conflict recovery, PR readiness checks, and PR creation for GitHub and GitLab.",
   "version": "0.0.1",
   "publisher": "local",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AreeshaHab/git-shortcuts-doctor.git"
+  },
+  "homepage": "https://github.com/AreeshaHab/git-shortcuts-doctor",
+  "bugs": {
+    "url": "https://github.com/AreeshaHab/git-shortcuts-doctor/issues"
+  },
   "license": "MIT",
   "icon": "media/icon.png",
   "keywords": [
