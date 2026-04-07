@@ -3,7 +3,7 @@
   "displayName": "Git Shortcuts Doctor",
   "description": "A VS Code Git workflow assistant with shortcuts, conflict recovery, PR readiness checks, and PR creation for GitHub and GitLab.",
   "version": "0.0.1",
-  "publisher": "local",
+  "publisher": "AreeshaHabib",
   "repository": {
     "type": "git",
     "url": "https://github.com/AreeshaHab/git-shortcuts-doctor.git"
